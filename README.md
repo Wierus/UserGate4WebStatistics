@@ -1,4 +1,5 @@
-UserGate4WebStatistics
-======================
+﻿# UserGate4WebStatistics
 
-[SoftProjects] Web-статистика для прокси-сервера UserGate 4
+Web-статистика для прокси-сервера UserGate 4, использующего для хранения базы данных Microsoft SQL Server.
+
+Перед использованием необходимо установить настройки, хранящиеся в файле «settings.php».

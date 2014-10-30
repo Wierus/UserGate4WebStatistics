@@ -1,0 +1,51 @@
+p {
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+}
+
+p.Button {
+	text-align: center;
+}
+
+p.Header {
+	font-weight: bold;
+	text-align: center;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table.SelectTimeForm td {
+	border-style: none;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+table.StatisticsTable td {
+	border-color: #7F7F7F;
+	border-style: solid;
+	border-width: 1px;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+table.StatisticsTable td a {
+	color: #003399;
+	text-decoration: none;
+}
+
+table.StatisticsTable thead td {
+	font-weight: bold;
+	text-align: center;
+}
+
+table.StatisticsTable tbody td {
+	font-weight: normal;
+	text-align: right;
+}
+
+table.StatisticsTable tfoot td {
+	font-weight: bold;
+	text-align: right;
+}
