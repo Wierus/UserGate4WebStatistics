@@ -1,11 +1,11 @@
-<?php
+п»ї<?php
 
 require_once 'utils.php';
 
 echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">';
 echo '<html xmlns="http://www.w3.org/1999/xhtml">';
 echo '<head>';
-echo '<title>Статистика</title>';
+echo '<title>РЎС‚Р°С‚РёСЃС‚РёРєР°</title>';
 echo '<meta http-equiv="content-type" content="text/html; charset=windows-1251" />';
 echo '<link rel="stylesheet" type="text/css" href="styles.css" />';
 echo '<link rel="stylesheet" type="text/css" href="style.css" />';
@@ -17,7 +17,7 @@ echo '<tr>';
 echo '<td width="100%" valign="top">';
 $ip = getIP();
 if ($ip == ip2long(UG4Address)) {
-	echo '<p class="Header">Подробная статистика недоступна, проверьте настройки подключения.</p>';
+	echo '<p class="Header">РџРѕРґСЂРѕР±РЅР°СЏ СЃС‚Р°С‚РёСЃС‚РёРєР° РЅРµРґРѕСЃС‚СѓРїРЅР°, РїСЂРѕРІРµСЂСЊС‚Рµ РЅР°СЃС‚СЂРѕР№РєРё РїРѕРґРєР»СЋС‡РµРЅРёСЏ.</p>';
 	echo '</td>';
 	echo '</tr>';
 	echo '</table>';
@@ -36,14 +36,14 @@ $totalDuration  = 0;
 printSelectTimeForm($startTime, $finishTime);
 mssql_connect(MSSQLServer, MSSQLLogin, MSSQLPassword);
 mssql_select_db(MSSQLDatabase);
-echo '<p class="Header">Статистика по дням</p>';
+echo '<p class="Header">РЎС‚Р°С‚РёСЃС‚РёРєР° РїРѕ РґРЅСЏРј</p>';
 echo '<table class="StatisticsTable" align="center">';
 echo '<thead>';
 echo '<tr>';
-echo '<td>Дата</td>';
-echo '<td>Получено</td>';
-echo '<td>Отправлено</td>';
-echo '<td>Длительность</td>';
+echo '<td>Р”Р°С‚Р°</td>';
+echo '<td>РџРѕР»СѓС‡РµРЅРѕ</td>';
+echo '<td>РћС‚РїСЂР°РІР»РµРЅРѕ</td>';
+echo '<td>Р”Р»РёС‚РµР»СЊРЅРѕСЃС‚СЊ</td>';
 echo '</tr>';
 echo '</thead>';
 echo '<tbody>';
@@ -59,7 +59,7 @@ for ($i = 0; $i < $intervalsCount; $i++) {
 	$intervalBytesSent = ($row['BYTES_SENT'] === null) ? 0 : $row['BYTES_SENT'];
 	$intervalDuration  = ($row['DURATION']   === null) ? 0 : $row['DURATION'];
 	if (($intervalBytesRecv == 0) && ($intervalBytesSent == 0) && ($intervalDuration == 0)) {
-		// не отображать нулевые строки
+		// РЅРµ РѕС‚РѕР±СЂР°Р¶Р°С‚СЊ РЅСѓР»РµРІС‹Рµ СЃС‚СЂРѕРєРё
 		continue;
 	}
 	$totalBytesRecv += $intervalBytesRecv;
@@ -75,7 +75,7 @@ for ($i = 0; $i < $intervalsCount; $i++) {
 echo '</tbody>';
 echo '<tfoot>';
 echo '<tr>';
-echo '<td>Всего</td>';
+echo '<td>Р’СЃРµРіРѕ</td>';
 echo '<td>' . printFormatInt($totalBytesRecv) . '</td>';
 echo '<td>' . printFormatInt($totalBytesSent) . '</td>';
 echo '<td>' . gmdate('H:i:s', $totalDuration) . '</td>';

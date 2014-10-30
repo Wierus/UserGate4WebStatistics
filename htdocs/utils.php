@@ -1,4 +1,4 @@
-<?php
+п»ї<?php
 
 require_once 'settings.php';
 
@@ -20,19 +20,19 @@ function getSortItem() {
 
 /*
 	mktime($hour, $minute, $second, $month, $day, $year)
-	j | День месяца без ведущих нулей             | от  1 до 31
-	n | Порядковый номер месяца без ведущих нулей | от  1 до 12
-	d | День месяца с ведущими нулями             | от 01 до 31
-	m | Порядковый номер месяца с ведущими нулями | от 01 до 12
-	Y | Порядковый номер года, 4 цифры            | Примеры: 1999, 2003
+	j | Р”РµРЅСЊ РјРµСЃСЏС†Р° Р±РµР· РІРµРґСѓС‰РёС… РЅСѓР»РµР№             | РѕС‚  1 РґРѕ 31
+	n | РџРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ РјРµСЃСЏС†Р° Р±РµР· РІРµРґСѓС‰РёС… РЅСѓР»РµР№ | РѕС‚  1 РґРѕ 12
+	d | Р”РµРЅСЊ РјРµСЃСЏС†Р° СЃ РІРµРґСѓС‰РёРјРё РЅСѓР»СЏРјРё             | РѕС‚ 01 РґРѕ 31
+	m | РџРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ РјРµСЃСЏС†Р° СЃ РІРµРґСѓС‰РёРјРё РЅСѓР»СЏРјРё | РѕС‚ 01 РґРѕ 12
+	Y | РџРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ РіРѕРґР°, 4 С†РёС„СЂС‹            | РџСЂРёРјРµСЂС‹: 1999, 2003
 */
 
-// первая секунда дня
+// РїРµСЂРІР°СЏ СЃРµРєСѓРЅРґР° РґРЅСЏ
 function getStartTimeForDate($year, $month, $day) {
 	return mktime(0, 0, 0, $month, $day, $year);
 }
 
-// последняя секунда дня
+// РїРѕСЃР»РµРґРЅСЏСЏ СЃРµРєСѓРЅРґР° РґРЅСЏ
 function getFinishTimeForDate($year, $month, $day) {
 	return mktime(0, 0, -1, $month, $day + 1, $year);
 }
@@ -99,13 +99,13 @@ function printSelectTimeForm($startTime, $finishTime) {
 	echo '<form method="post" action="">';
 	echo '<table class="SelectTimeForm" align="center">';
 	echo '<tr>';
-	echo '<td>от:</td>';
+	echo '<td>РѕС‚:</td>';
 	echo '<td>';
 	printSelectTimeElement('startDay',   MinDay,   MaxDay,   date('j', $startTime));
 	printSelectTimeElement('startMonth', MinMonth, MaxMonth, date('n', $startTime));
 	printSelectTimeElement('startYear',  MinYear,  MaxYear,  date('Y', $startTime));
 	echo '</td>';
-	echo '<td>до:</td>';
+	echo '<td>РґРѕ:</td>';
 	echo '<td>';
 	printSelectTimeElement('finishDay',   MinDay,   MaxDay,   date('j', $finishTime));
 	printSelectTimeElement('finishMonth', MinMonth, MaxMonth, date('n', $finishTime));
@@ -113,7 +113,7 @@ function printSelectTimeForm($startTime, $finishTime) {
 	echo '</td>';
 	echo '</tr>';
 	echo '</table>';
-	echo '<p class="Button"><input type="submit" value="Посмотреть" /></p>';
+	echo '<p class="Button"><input type="submit" value="РџРѕСЃРјРѕС‚СЂРµС‚СЊ" /></p>';
 	echo '</form>';
 }
 
@@ -139,51 +139,51 @@ function printSelectTimeElement($name, $minValue, $maxValue, $selectedValue) {
 function getMonthName($index) {
 	switch ($index) {
 		case  1: {
-			return 'Января';
+			return 'РЇРЅРІР°СЂСЏ';
 			break;
 		}
 		case  2: {
-			return 'Февраля';
+			return 'Р¤РµРІСЂР°Р»СЏ';
 			break;
 		}
 		case  3: {
-			return 'Марта';
+			return 'РњР°СЂС‚Р°';
 			break;
 		}
 		case  4: {
-			return 'Апреля';
+			return 'РђРїСЂРµР»СЏ';
 			break;
 		}
 		case  5: {
-			return 'Мая';
+			return 'РњР°СЏ';
 			break;
 		}
 		case  6: {
-			return 'Июня';
+			return 'РСЋРЅСЏ';
 			break;
 		}
 		case  7: {
-			return 'Июля';
+			return 'РСЋР»СЏ';
 			break;
 		}
 		case  8: {
-			return 'Августа';
+			return 'РђРІРіСѓСЃС‚Р°';
 			break;
 		}
 		case  9: {
-			return 'Сентября';
+			return 'РЎРµРЅС‚СЏР±СЂСЏ';
 			break;
 		}
 		case 10: {
-			return 'Октября';
+			return 'РћРєС‚СЏР±СЂСЏ';
 			break;
 		}
 		case 11: {
-			return 'Ноября';
+			return 'РќРѕСЏР±СЂСЏ';
 			break;
 		}
 		case 12: {
-			return 'Декабря';
+			return 'Р”РµРєР°Р±СЂСЏ';
 			break;
 		}
 	}

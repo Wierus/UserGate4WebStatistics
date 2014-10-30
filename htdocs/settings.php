@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 define('MSSQLServer',   '127.0.0.1');
 define('MSSQLLogin',    'ug4user');
